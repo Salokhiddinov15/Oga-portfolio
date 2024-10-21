@@ -21,6 +21,12 @@ header{
   z-index: 999;
 }
 
+header.sticky{
+  background: crimson;
+  padding: 15px 100px;
+  transition: .7s ease;
+}
+
 header .brand {
   color: #fff; 
   font-size: 32px;
@@ -42,7 +48,7 @@ header .navigation a{
 }
 
 header .navigation a:hover{
-  color: crimson;
+  color: rgb(110, 50, 50);
 }
 
 section{
@@ -521,8 +527,42 @@ footer p{
     padding: 12px 20px;
   }
 
+  header.sticky{
+    padding: 10px 20px;
+    transition: .7s ease;
+  }
+
   header .navigation{
     display: none;
+  }
+
+  header .navigation.active{
+    z-index: 888;
+    position: fixed;
+    background: #fff;
+    top: 0;
+    right: 0;
+    width: 380px;
+    height: 100%;
+    box-shadow: 0 5px 25px rgba(1 1 1 /15%);
+    transition: .5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  header .navigation a{
+    color: #000;
+    margin: 10px;
+    padding: 0px 20px;
+    font-size: 22px;
+    border-radius: 20px;
+  }
+
+  header .navigation a:hover{
+    background: crimson;
+    color: #fff;
   }
 
   .menu-btn{
@@ -536,6 +576,15 @@ footer p{
     margin: 0px 20px;
     cursor: pointer;
     transition: .4s ease;
+  }
+
+  .menu-btn.active{
+    z-index: 999;
+    background: url(./images/close.png) no-repeat;
+    background-size: 25px;
+    background-position: center;
+    transition: .3s ease;
+    filter: invert(1);
   }
 
   section{
